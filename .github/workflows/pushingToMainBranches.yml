@@ -1,0 +1,39 @@
+name: Close Issue Branch Merge
+
+on:
+  issues:
+    types: [closed]
+
+jobs:
+  merge-branch:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Determine issue title prefix
+        id: check_prefix
+        run: |
+          ISSUE_TITLE="${{ github.event.issue.title }}"
+          if [[ $ISSUE_TITLE =~ ^v- ]]; then
+            echo "volunteer"
+          elif [[ $ISSUE_TITLE =~ ^o- ]]; then
+            echo "organization"
+          elif [[ $ISSUE_TITLE =~ ^a- ]]; then
+            echo "admin"
+          else
+            echo "no_prefix"
+          fi
+        env:
+          ISSUE_TITLE: ${{ github.event.issue.title }}
+
+      - name: Merge branch if issue title contains prefix
+        if: steps.check_prefix.outputs != 'no_prefix'
+        run: |
+          ISSUE_NAME=$(echo "${{ env.ISSUE_TITLE }}")
+
+          if [ "${{ steps.check_prefix.outputs }}" == "volunteer" ]; then
+            git push origin $ISSUE_NAME:volunteer-main
+          elif [ "${{ steps.check_prefix.outputs }}" == "organization" ]; then
+            git push origin $ISSUE_NAME:organization-main
+          elif [ "${{ steps.check_prefix.outputs }}" == "admin" ]; then
+            git push origin $ISSUE_NAME:admin-main
+          fi
