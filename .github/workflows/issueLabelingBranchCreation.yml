@@ -1,0 +1,31 @@
+name: Issue Labeling and Branch Creation
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  label-and-create-branch:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check issue title prefix and add labels
+        id: check_prefix
+        run: |
+          ISSUE_TITLE="${{ github.event.issue.title }}"
+          if [[ $ISSUE_TITLE =~ ^v- ]]; then
+            echo "Adding 'volunteer' label"
+            echo "::add-labels volunteer"
+          elif [[ $ISSUE_TITLE =~ ^o- ]]; then
+            echo "Adding 'organization' label"
+            echo "::add-labels organization"
+          elif [[ $ISSUE_TITLE =~ ^a- ]]; then
+            echo "Adding 'admin' label"
+            echo "::add-labels admin"
+          fi
+
+      - name: Create branch if issue title starts with prefix
+        run: |
+          ISSUE_NAME=$(echo "${{ github.event.issue.title }}")
+          git checkout -b $ISSUE_NAME
+          git push origin $ISSUE_NAME
