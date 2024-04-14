@@ -1,8 +1,14 @@
-import {Button, ButtonGroup} from "flowbite-react";
-import {HiAdjustments, HiCloudDownload, HiUserCircle} from "react-icons/hi";
 import CardNA from "@/components/organization/Components/Card/CardNA";
+import Link from "next/link";
+import React from "react";
 
-export default function OrgCard(props: any) {
+
+
+
+
+export default function OrgSideBar(props: any) {
+
+
     return (
         <main>
             <aside id="sidebar-multi-level-sidebar"
@@ -69,7 +75,10 @@ export default function OrgCard(props: any) {
                                           d="M19 7h1v12a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V5a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h11.5M7 14h6m-6 3h6m0-10h.5m-.5 3h.5M7 7h3v3H7V7Z"/>
                                 </svg>
 
-                                <span className="flex-1 ms-3 whitespace-nowrap">News & Articles</span>
+                                <span className="flex-1 ms-3 whitespace-nowrap">
+
+                                       <Link href="/news">News & Articles</Link>
+                                </span>
                             </a>
                         </li>
                         <li>
@@ -106,15 +115,7 @@ export default function OrgCard(props: any) {
                 </div>
             </aside>
 
-            <div className="p-4 sm:ml-64">
-                <div className="p-4 border-2 border-gray-200 grid grid-cols-2 md:grid-cols-3 gap-4 ">
-                   <CardNA/>
-                   <CardNA/>
-                   <CardNA/>
-                   <CardNA/>
 
-                </div>
-            </div>
 
         </main>
 

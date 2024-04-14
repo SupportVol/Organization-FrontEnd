@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { ThemeModeScript } from "flowbite-react";
 import "./globals.css";
-import OrgCard from "@/components/organization/OrgCard";
+import Page from "@/app/main/page";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,7 +22,6 @@ export default function RootLayout({
         <ThemeModeScript />
       </head>
       <body className={inter.className}>
-      <OrgCard/>
       {children}</body>
     </html>
   );
