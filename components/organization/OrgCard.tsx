@@ -108,10 +108,10 @@ export default function OrgCard(props: any) {
 
             <div className="p-4 sm:ml-64">
                 <div className="p-4 border-2 border-gray-200 grid grid-cols-2 md:grid-cols-3 gap-4 ">
-                    <CardNA/>
-                    <CardNA/>
-                    <CardNA/>
-                    <CardNA/>
+                   <CardNA/>
+                   <CardNA/>
+                   <CardNA/>
+                   <CardNA/>
 
                 </div>
             </div>
