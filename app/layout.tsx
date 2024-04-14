@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import { ThemeModeScript } from "flowbite-react";
+import {DarkThemeToggle, ThemeModeScript} from "flowbite-react";
 import "./globals.css";
 import Page from "@/app/main/page";
 import OrgSideBar from "@/app/main/page";
@@ -19,10 +19,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
+      <head><DarkThemeToggle />
         <ThemeModeScript />
       </head>
       <body className={inter.className}>
+
       <div className="flex  bg-amber-100">
           <OrgSideBar/>
       </div>
