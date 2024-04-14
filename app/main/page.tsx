@@ -2,10 +2,6 @@ import CardNA from "@/components/organization/Components/Card/CardNA";
 import Link from "next/link";
 import React from "react";
 
-
-
-
-
 export default function OrgSideBar(props: any) {
 
 
@@ -27,7 +23,8 @@ export default function OrgSideBar(props: any) {
                                           clip-rule="evenodd"/>
                                 </svg>
 
-                                <span className="ms-3">Training Session</span>
+                                <span className="ms-3"><Link href="/trainingsession">Training Session </Link></span>
+
                             </a>
                         </li>
 
@@ -46,7 +43,10 @@ export default function OrgSideBar(props: any) {
                                 </svg>
 
 
-                                <span className="flex-1 ms-3 whitespace-nowrap">Chat</span>
+                                <span className="flex-1 ms-3 whitespace-nowrap">
+                                    <Link href="/chat">
+                                        Chat
+                                    </Link> </span>
                                 {/*<span className="inline-flex items-center justify-center w-3 h-3 p-3 ms-3 text-sm font-medium text-blue-800 bg-blue-100 rounded-full dark:bg-blue-900 dark:text-blue-300">3</span>*/}
                             </a>
                         </li>
@@ -61,7 +61,9 @@ export default function OrgSideBar(props: any) {
                                     <path
                                         d="m12.013 12.545 5.006-3.194-5.006-3.176 4.98-3.194L22 6.175l-5.007 3.194L22 12.562l-5.007 3.194-4.98-3.211Z"/>
                                 </svg>
-                                <span className="flex-1 ms-3 whitespace-nowrap">Volunteer Opportunities</span>
+                                <span className="flex-1 ms-3 whitespace-nowrap"> <Link href="vol_oppotunities">
+                                    Volunteer Opportunities
+                                </Link> </span>
                             </a>
                         </li>
                         <li>
@@ -92,7 +94,10 @@ export default function OrgSideBar(props: any) {
                                           stroke-width="2"
                                           d="M1 8h11m0 0L8 4m4 4-4 4m4-11h3a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-3"/>
                                 </svg>
-                                <span className="flex-1 ms-3 whitespace-nowrap">Sign In</span>
+                                <span className="flex-1 ms-3 whitespace-nowrap">
+                                    <Link href="/login">
+                                        Sign In
+                                    </Link> </span>
                             </a>
                         </li>
                         <li>
@@ -108,7 +113,13 @@ export default function OrgSideBar(props: any) {
                                     <path
                                         d="M8.961 16a.93.93 0 0 0 .189-.019l3.4-.679a.961.961 0 0 0 .49-.263l6.118-6.117a2.884 2.884 0 0 0-4.079-4.078l-6.117 6.117a.96.96 0 0 0-.263.491l-.679 3.4A.961.961 0 0 0 8.961 16Zm7.477-9.8a.958.958 0 0 1 .68-.281.961.961 0 0 1 .682 1.644l-.315.315-1.36-1.36.313-.318Zm-5.911 5.911 4.236-4.236 1.359 1.359-4.236 4.237-1.7.339.341-1.699Z"/>
                                 </svg>
-                                <span className="flex-1 ms-3 whitespace-nowrap">Sign Up</span>
+                                <span className="flex-1 ms-3 whitespace-nowrap">
+                                    <Link href="/register">
+                                  Sign Up
+                                    </Link>
+                                </span>
+
+
                             </a>
                         </li>
                     </ul>

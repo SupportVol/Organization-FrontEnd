@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import { ThemeModeScript } from "flowbite-react";
 import "./globals.css";
 import Page from "@/app/main/page";
+import OrgSideBar from "@/app/main/page";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,7 +23,14 @@ export default function RootLayout({
         <ThemeModeScript />
       </head>
       <body className={inter.className}>
-      {children}</body>
+      <div className="flex  bg-amber-100">
+          <OrgSideBar/>
+      </div>
+      <div className="flex flex-col  h-full ml-64 p-4">
+          {children}
+      </div>
+
+      </body>
     </html>
   );
 }
