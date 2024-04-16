@@ -1,4 +1,4 @@
-import { Button, DarkThemeToggle } from "flowbite-react";
+
 import { Card } from "flowbite-react";
 import Image from "next/image";
 export default function CardNA() {
@@ -7,10 +7,8 @@ export default function CardNA() {
 
 
 
-            <Card
-                className="max-w-sm"
-                renderImage={() => <Image width={500} height={500} src='/components/organization/assets/image-1.jpg' alt="image 1" />}
-            >
+            <Card className="max-w-sm">
+                <Image src="/vercel.svg" height={500} width={500} alt="hello"/>
                 <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                     Example News & Articles
                 </h5>

@@ -3,9 +3,8 @@
 import { Button } from "flowbite-react";
 import React from "react";
 import { Card } from "flowbite-react";
-import Link from "next/link";
-
-import CardNA from "@/components/organization/Components/Card/CardNA";
+import cardI from "@/public/image-1.jpg"
+import Image from "next/image";
 export default function VolOpportunities(props: any) {
     return (
         <main >
@@ -23,8 +22,9 @@ export default function VolOpportunities(props: any) {
                 <br/>
                 <h1 className="text-2xl  bg-orange-500 p-2">Initiative Projects</h1>
                 <br/>
-                <div className="flex flex-row gap-3 scroll-ps-6 snap-x ...">
-                    <Card className="max-w-sm " imgSrc="/images/blog/image-4.jpg" horizontal>
+                <div className="flex flex-row gap-3 ">
+                    <Card className="max-w-sm "  horizontal>
+                        <Image src="/image-1.jpg" height={500} width={500} alt="hello"/>
                         <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                             Initiative Projects
                         </h5>
@@ -32,7 +32,8 @@ export default function VolOpportunities(props: any) {
                             Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.
                         </p>
                     </Card>
-                    <Card className="max-w-sm" imgSrc="/images/blog/image-4.jpg" horizontal>
+                    <Card className="max-w-sm"  horizontal>
+                        <Image src="/image-1.jpg" height={500} width={500} alt="hello"/>
                         <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                             Initiative Projects
                         </h5>
@@ -40,7 +41,8 @@ export default function VolOpportunities(props: any) {
                             Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.
                         </p>
                     </Card>
-                    <Card className="max-w-sm" imgSrc="/images/blog/image-4.jpg" horizontal>
+                    <Card className="max-w-sm"  horizontal>
+                        <Image src="/image-1.jpg" height={500} width={500} alt="hello"/>
                         <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                             Initiative Projects
                         </h5>
@@ -48,7 +50,8 @@ export default function VolOpportunities(props: any) {
                             Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.
                         </p>
                     </Card>
-                    <Card className="max-w-sm" imgSrc="/images/blog/image-4.jpg" horizontal>
+                    <Card className="max-w-sm"  horizontal>
+                        <Image src="/image-1.jpg" height={500} width={500} alt="hello"/>
                         <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                             Initiative Projects
                         </h5>
@@ -61,7 +64,8 @@ export default function VolOpportunities(props: any) {
                 <h1 className="text-2xl  bg-orange-500 p-2">Quick Projects</h1>
                 <br/>
                 <div className="flex flex-row gap-3 scroll-ps-6 snap-x ...">
-                    <Card className="max-w-sm" imgSrc="/images/blog/image-4.jpg" horizontal>
+                    <Card className="max-w-sm"  horizontal>
+                        <Image src="/next.svg" height={500} width={500} alt="hello"/>
                         <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                             Quick Projects
                         </h5>
@@ -82,7 +86,8 @@ export default function VolOpportunities(props: any) {
                             Chat
                         </Button>
                     </Card>
-                    <Card className="max-w-sm" imgSrc="/images/blog/image-4.jpg" horizontal>
+                    <Card className="max-w-sm"  horizontal>
+                        <Image src="/next.svg" height={500} width={500} alt="hello"/>
                         <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                             Quick Projects
                         </h5>
@@ -103,7 +108,8 @@ export default function VolOpportunities(props: any) {
                             Chat
                         </Button>
                     </Card>
-                    <Card className="max-w-sm" imgSrc="/images/blog/image-4.jpg" horizontal>
+                    <Card className="max-w-sm"  horizontal>
+                        <Image src="/next.svg" height={500} width={500} alt="hello"/>
                         <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                             Quick Projects
                         </h5>
@@ -124,7 +130,8 @@ export default function VolOpportunities(props: any) {
                             Chat
                         </Button>
                     </Card>
-                    <Card className="max-w-sm" imgSrc="/images/blog/image-4.jpg" horizontal>
+                    <Card className="max-w-sm"  horizontal>
+                        <Image src="/next.svg" height={500} width={500} alt="hello"/>
                         <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                             Quick Projects
                         </h5>

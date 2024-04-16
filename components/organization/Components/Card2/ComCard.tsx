@@ -11,7 +11,7 @@ export default function ComCard(props: any) {
     return (
 
         <div >
-            <Card className="max-w-sm" imgSrc="/components/organization/assets/image-1.jpg" horizontal>
+            <Card className="max-w-sm" imgSrc="/pexels-belle-co-1000445.jpg" horizontal>
                 <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                     Example Community Name
                 </h5>
