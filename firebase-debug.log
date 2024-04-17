@@ -1,0 +1,141 @@
+[debug] [2024-04-17T06:02:49.844Z] ----------------------------------------------------------------------
+[debug] [2024-04-17T06:02:49.846Z] Command:       /home/ranuga/.nvm/versions/node/v21.7.2/bin/node /home/ranuga/.nvm/versions/node/v21.7.2/bin/firebase deploy
+[debug] [2024-04-17T06:02:49.846Z] CLI Version:   13.7.2
+[debug] [2024-04-17T06:02:49.846Z] Platform:      linux
+[debug] [2024-04-17T06:02:49.847Z] Node Version:  v21.7.2
+[debug] [2024-04-17T06:02:49.847Z] Time:          Wed Apr 17 2024 11:32:49 GMT+0530 (India Standard Time)
+[debug] [2024-04-17T06:02:49.847Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-04-17T06:02:49.905Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-04-17T06:02:49.905Z] > authorizing via signed-in user (go2ranuga@gmail.com)
+[debug] [2024-04-17T06:02:49.905Z] [iam] checking project support-vol for permissions ["firebase.projects.get","firebasehosting.sites.update","firebaserules.releases.create","firebaserules.releases.update","firebaserules.rulesets.create"]
+[debug] [2024-04-17T06:02:49.906Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/support-vol:testIamPermissions [none]
+[debug] [2024-04-17T06:02:49.907Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/support-vol:testIamPermissions x-goog-quota-user=projects/support-vol
+[debug] [2024-04-17T06:02:49.907Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/support-vol:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update","firebaserules.releases.create","firebaserules.releases.update","firebaserules.rulesets.create"]}
+[debug] [2024-04-17T06:02:51.265Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/support-vol:testIamPermissions 200
+[debug] [2024-04-17T06:02:51.267Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/support-vol:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update","firebaserules.releases.create","firebaserules.releases.update","firebaserules.rulesets.create"]}
+[debug] [2024-04-17T06:02:51.270Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/support-vol [none]
+[debug] [2024-04-17T06:02:52.551Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/support-vol 200
+[debug] [2024-04-17T06:02:52.551Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/support-vol {"projectId":"support-vol","projectNumber":"655861372911","displayName":"Support Vol","name":"projects/support-vol","resources":{"hostingSite":"support-vol","realtimeDatabaseInstance":"support-vol-default-rtdb","storageBucket":"support-vol.appspot.com","locationId":"asia-southeast1"},"state":"ACTIVE","etag":"1_a33c398e-d8d1-475f-909f-3d13049740f3"}
+[debug] [2024-04-17T06:02:54.071Z] defaultcredentials: writing to file /home/ranuga/.config/firebase/go2ranuga_gmail_com_application_default_credentials.json
+[debug] [2024-04-17T06:02:54.073Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/support-vol/sites pageToken=&pageSize=10
+[debug] [2024-04-17T06:02:55.330Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/support-vol/sites 200
+[debug] [2024-04-17T06:02:55.330Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/support-vol/sites {"sites":[{"name":"projects/support-vol/sites/support-vol","defaultUrl":"https://support-vol.web.app","appId":"1:655861372911:web:a1d577dda3edfc3c43881a","type":"DEFAULT_SITE"}]}
+[debug] [2024-04-17T06:02:55.330Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:655861372911:web:a1d577dda3edfc3c43881a/config [none]
+[debug] [2024-04-17T06:02:57.548Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:655861372911:web:a1d577dda3edfc3c43881a/config 200
+[debug] [2024-04-17T06:02:57.548Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:655861372911:web:a1d577dda3edfc3c43881a/config {"projectId":"support-vol","appId":"1:655861372911:web:a1d577dda3edfc3c43881a","databaseURL":"https://support-vol-default-rtdb.asia-southeast1.firebasedatabase.app","storageBucket":"support-vol.appspot.com","locationId":"asia-southeast1","apiKey":"AIzaSyAmSpGqd4qk36lj_K9sOnfRN4ZtHCK-YQM","authDomain":"support-vol.firebaseapp.com","messagingSenderId":"655861372911","measurementId":"G-3FSFLTN1WD"}
+[info] 
+   Thank you for trying our early preview of Next.js support on Firebase Hosting.
+   During the preview, support is best-effort and breaking changes can be expected. Proceed with caution.
+   The integration is known to work with Next.js version 12 - 14.0. You may encounter errors.
+
+   Documentation: https://firebase.google.com/docs/hosting/frameworks/nextjs
+   File a bug: https://github.com/firebase/firebase-tools/issues/new?template=bug_report.md
+   Submit a feature request: https://github.com/firebase/firebase-tools/issues/new?template=feature_request.md
+
+   We'd love to learn from you. Express your interest in helping us shape the future of Firebase Hosting: https://goo.gle/41enW5X
+
+[debug] [2024-04-17T06:03:01.116Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/support-vol/sites/support-vol [none]
+[debug] [2024-04-17T06:03:01.968Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/support-vol/sites/support-vol 200
+[debug] [2024-04-17T06:03:01.968Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/support-vol/sites/support-vol {"name":"projects/support-vol/sites/support-vol","defaultUrl":"https://support-vol.web.app","appId":"1:655861372911:web:a1d577dda3edfc3c43881a","type":"DEFAULT_SITE"}
+[info] Attention: Next.js now collects completely anonymous telemetry regarding usage.
+
+[info] This information is used to shape Next.js' roadmap and prioritize features.
+You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
+https://nextjs.org/telemetry
+
+
+[info]    ▲ Next.js 14.1.3
+
+[info] 
+
+[info]    Creating an optimized production build ...
+
+[info] (node:45213) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+
+[info] Failed to compile.
+
+app/(auth)/layout.tsx
+An error occured in `next/font`.
+
+Error: Cannot find module '/home/ranuga/Programming/Projects/All/FrontEnd/node_modules/ts-interface-checker/dist/index'. Please verify that the package.json has a valid "main" entry
+    at tryPackage (node:internal/modules/cjs/loader:443:19)
+    at Module._findPath (node:internal/modules/cjs/loader:713:18)
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1128:27)
+    at /home/ranuga/Programming/Projects/All/FrontEnd/node_modules/next/dist/server/require-hook.js:55:36
+    at Module._load (node:internal/modules/cjs/loader:983:27)
+    at Module.require (node:internal/modules/cjs/loader:1230:19)
+    at mod.require (/home/ranuga/Programming/Projects/All/FrontEnd/node_modules/next/dist/server/require-hook.js:65:28)
+    at require (node:internal/modules/helpers:179:18)
+    at Object.<anonymous> (/home/ranuga/Programming/Projects/All/FrontEnd/node_modules/sucrase/dist/Options.js:1:196)
+    at Module._compile (node:internal/modules/cjs/loader:1368:14)
+
+app/admin/layout.tsx
+An error occured in `next/font`.
+
+Error: Cannot find module '/home/ranuga/Programming/Projects/All/FrontEnd/node_modules/ts-interface-checker/dist/index'. Please verify that the package.json has a valid "main" entry
+    at tryPackage (node:internal/modules/cjs/loader:443:19)
+    at Module._findPath (node:internal/modules/cjs/loader:713:18)
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1128:27)
+    at /home/ranuga/Programming/Projects/All/FrontEnd/node_modules/next/dist/server/require-hook.js:55:36
+    at Module._load (node:internal/modules/cjs/loader:983:27)
+    at Module.require (node:internal/modules/cjs/loader:1230:19)
+    at mod.require (/home/ranuga/Programming/Projects/All/FrontEnd/node_modules/next/dist/server/require-hook.js:65:28)
+    at require (node:internal/modules/helpers:179:18)
+    at Object.<anonymous> (/home/ranuga/Programming/Projects/All/FrontEnd/node_modules/sucrase/dist/Options.js:1:196)
+    at Module._compile (node:internal/modules/cjs/loader:1368:14)
+
+app/layout.tsx
+An error occured in `next/font`.
+
+Error: Cannot find module '/home/ranuga/Programming/Projects/All/FrontEnd/node_modules/ts-interface-checker/dist/index'. Please verify that the package.json has a valid "main" entry
+    at tryPackage (node:internal/modules/cjs/loader:443:19)
+    at Module._findPath (node:internal/modules/cjs/loader:713:18)
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1128:27)
+    at /home/ranuga/Programming/Projects/All/FrontEnd/node_modules/next/dist/server/require-hook.js:55:36
+    at Module._load (node:internal/modules/cjs/loader:983:27)
+    at Module.require (node:internal/modules/cjs/loader:1230:19)
+    at mod.require (/home/ranuga/Programming/Projects/All/FrontEnd/node_modules/next/dist/server/require-hook.js:65:28)
+    at require (node:internal/modules/helpers:179:18)
+    at Object.<anonymous> (/home/ranuga/Programming/Projects/All/FrontEnd/node_modules/sucrase/dist/Options.js:1:196)
+    at Module._compile (node:internal/modules/cjs/loader:1368:14)
+
+app/org/layout.tsx
+An error occured in `next/font`.
+
+Error: Cannot find module '/home/ranuga/Programming/Projects/All/FrontEnd/node_modules/ts-interface-checker/dist/index'. Please verify that the package.json has a valid "main" entry
+    at tryPackage (node:internal/modules/cjs/loader:443:19)
+    at Module._findPath (node:internal/modules/cjs/loader:713:18)
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1128:27)
+    at /home/ranuga/Programming/Projects/All/FrontEnd/node_modules/next/dist/server/require-hook.js:55:36
+    at Module._load (node:internal/modules/cjs/loader:983:27)
+    at Module.require (node:internal/modules/cjs/loader:1230:19)
+    at mod.require (/home/ranuga/Programming/Projects/All/FrontEnd/node_modules/next/dist/server/require-hook.js:65:28)
+    at require (node:internal/modules/helpers:179:18)
+    at Object.<anonymous> (/home/ranuga/Programming/Projects/All/FrontEnd/node_modules/sucrase/dist/Options.js:1:196)
+    at Module._compile (node:internal/modules/cjs/loader:1368:14)
+
+app/vol/layout.tsx
+An error occured in `next/font`.
+
+Error: Cannot find module '/home/ranuga/Programming/Projects/All/FrontEnd/node_modules/ts-interface-checker/dist/index'. Please verify that the package.json has a valid "main" entry
+    at tryPackage (node:internal/modules/cjs/loader:443:19)
+    at Module._findPath (node:internal/modules/cjs/loader:713:18)
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1128:27)
+    at /home/ranuga/Programming/Projects/All/FrontEnd/node_modules/next/dist/server/require-hook.js:55:36
+    at Module._load (node:internal/modules/cjs/loader:983:27)
+    at Module.require (node:internal/modules/cjs/loader:1230:19)
+    at mod.require (/home/ranuga/Programming/Projects/All/FrontEnd/node_modules/next/dist/server/require-hook.js:65:28)
+    at require (node:internal/modules/helpers:179:18)
+    at Object.<anonymous> (/home/ranuga/Programming/Projects/All/FrontEnd/node_modules/sucrase/dist/Options.js:1:196)
+    at Module._compile (node:internal/modules/cjs/loader:1368:14)
+
+
+[info] 
+
+[info] > Build failed because of webpack errors
+
+[debug] [2024-04-17T06:03:12.991Z] Error: ENOENT: no such file or directory, open '/home/ranuga/Programming/Projects/All/FrontEnd/.next/server/middleware-manifest.json'
+[error] 
+[error] Error: An unexpected error has occurred.
