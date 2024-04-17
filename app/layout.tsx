@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import {DarkThemeToggle, ThemeModeScript} from "flowbite-react";
+import { DarkThemeToggle, ThemeModeScript } from "flowbite-react";
 import "./globals.css";
 import OrgSideBar from "@/app/main/page";
+import { Footer } from "flowbite-react";
+import { BsDribbble, BsFacebook, BsGithub, BsInstagram, BsTwitter } from "react-icons/bs";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,17 +20,65 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head><DarkThemeToggle />
+      <head>
+        <DarkThemeToggle />
         <ThemeModeScript />
       </head>
       <body className={inter.className}>
-
-      <div className="flex  bg-amber-100">
-          <OrgSideBar/>
-      </div>
-      <div className="flex flex-col  h-full ml-64 p-4">
+        <div className="flex bg-amber-100">
+          <OrgSideBar />
+        </div>
+        <div className="flex flex-col h-full ml-64 p-4">
           {children}
-      </div>
+        </div>
+        <Footer container>
+          <div className="w-full">
+            <div className="grid w-full justify-between sm:flex sm:justify-between md:flex md:grid-cols-1">
+              <div>
+                <Footer.Brand
+                  href="https://supportvol.com"
+                  src="https://supportvol.com/images/logo.svg"
+                  alt="SupportVol Logo"
+                  name="SupportVol"
+                />
+              </div>
+              <div className="grid grid-cols-2 gap-8 sm:mt-4 sm:grid-cols-3 sm:gap-6">
+                <div>
+                  <Footer.Title title="About" />
+                  <Footer.LinkGroup col>
+                    <Footer.Link href="#">SupportVol</Footer.Link>
+                    <Footer.Link href="#">Volunteer Support</Footer.Link>
+                  </Footer.LinkGroup>
+                </div>
+                <div>
+                  <Footer.Title title="Follow us" />
+                  <Footer.LinkGroup col>
+                    <Footer.Link href="#">Facebook</Footer.Link>
+                    <Footer.Link href="#">Instagram</Footer.Link>
+                  </Footer.LinkGroup>
+                </div>
+                <div>
+                  <Footer.Title title="Legal" />
+                  <Footer.LinkGroup col>
+                    <Footer.Link href="#">Privacy Policy</Footer.Link>
+                    <Footer.Link href="#">Terms &amp; Conditions</Footer.Link>
+                  </Footer.LinkGroup>
+                </div>
+              </div>
+            </div>
+            <Footer.Divider />
+            <div className="w-full sm:flex sm:items-center sm:justify-between">
+              <Footer.Copyright href="#" by="SupportVol" year={2024} />
+              <div className="mt-4 flex space-x-6 sm:mt-0 sm:justify-center">
+                <Footer.Icon href="#" icon={BsFacebook} />
+                <Footer.Icon href="#" icon={BsInstagram} />
+                <Footer.Icon href="#" icon={BsTwitter} />
+                <Footer.Icon href="#" icon={BsGithub} />
+                <Footer.Icon href="#" icon={BsDribbble} />
+              </div>
+            </div>
+          </div>
+        </Footer>
       </body>
     </html>
   );
