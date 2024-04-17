@@ -3,15 +3,8 @@ import { Inter } from "next/font/google";
 import { ThemeModeScript } from "flowbite-react";
 import "./globals.css";
 
-import { ThemeProvider } from "@aws-amplify/ui-react";
-import { Amplify } from "aws-amplify";
-
-import awsconfig from "./aws-exports";
-
 import "@aws-amplify/ui-react/styles.css";
-import { studioTheme } from "./ui-components";
 
-Amplify.configure(awsconfig);
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -30,7 +23,7 @@ export default function RootLayout({
       <head>
         <ThemeModeScript />
       </head>
-      <body className={inter.className}>{children}</body>
+        <body className={inter.className}>{children}</body>
     </html>
   );
 }

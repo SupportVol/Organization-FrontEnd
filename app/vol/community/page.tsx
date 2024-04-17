@@ -1,4 +1,7 @@
+"use client";
+
 import Navigation from "@/components/volunteer/navigation";
+import CommunityCard from "@/ui-components/CommunityCard";
 import { Button, DarkThemeToggle } from "flowbite-react";
 import { HiOutlineAcademicCap, HiOutlineHome, HiAcademicCap, HiHome} from "react-icons/hi"
 
@@ -12,6 +15,8 @@ export default function Home() {
         <h1 className="text-4xl font-bold text-center">Community</h1>
         <p className="text-lg text-center">Welcome to the community page</p>
         <Button color="blue">Click me</Button>
+
+        <CommunityCard />
       </div>
 
     </main>
