@@ -3,9 +3,48 @@
 import { Button, Checkbox, Label, TextInput } from "flowbite-react";
 import Link from "next/link";
 import {  DarkThemeToggle } from "flowbite-react";
+import instance from "@/app/services/Axios/AxiosOrder";
+import {useState} from "react";
+
 
 export default function Home() {
-  return (
+
+    const [email, setEmail] = useState('')
+    const [firstName, setFirstName] = useState('')
+    const [secName, setSecName] = useState('')
+    const [password, setPassword] = useState('')
+
+
+    const registerHandle = () =>{
+        if(firstName !== '' && secName !== '' && password !== '' && email !== ''){
+            instance.post('/admin/register', {
+                firstName: firstName,
+                secName: secName,
+                email: email,
+                password:password,
+            })
+                .then(function (response) {
+                    console.log(firstName);
+                    console.log(secName);
+                    console.log(email);
+                    console.log(password);
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
+
+        }else {
+            alert("Please input all info")
+        }
+
+        setEmail("");
+        setPassword("");
+        setFirstName("");
+        setSecName("");
+    }
+
+
+    return (
     <main className="flex flex-col min-h-screen items-center justify-center gap-5 dark:bg-gray-800 ">
         <div className="flex flex-col">
             <h1 className="text-4xl font-bold">Register</h1>
@@ -17,25 +56,33 @@ export default function Home() {
                     <div className="mb-2 block">
                         <Label htmlFor="small" value="First Name" />
                     </div>
-                    <TextInput id="small" type="text" sizing="sm" />
+                    <TextInput
+                        onChange={(e) => setFirstName(e.target.value)}
+                        id="small" type="text" sizing="sm" />
                 </div>
                 <div>
                     <div className="mb-2 block">
                         <Label htmlFor="small" value="Last Name" />
                     </div>
-                    <TextInput id="small" type="text" sizing="sm" />
+                    <TextInput
+                        onChange={(e) => setSecName(e.target.value)}
+                        id="small" type="text" sizing="sm" />
                 </div>
                 <div>
                     <div className="mb-2 block">
                         <Label htmlFor="email2" value="Your email" />
                     </div>
-                    <TextInput id="email2" type="email" placeholder="name@flowbite.com" required shadow />
+                    <TextInput
+                        onChange={(e) => setEmail(e.target.value)}
+                        id="email2" type="email" placeholder="name@flowbite.com" required shadow />
                 </div>
                 <div>
                     <div className="mb-2 block">
                         <Label htmlFor="password2" value="Your password" />
                     </div>
-                    <TextInput id="password2" type="password" required shadow />
+                    <TextInput
+                        onChange={(e) => setPassword(e.target.value)}
+                        id="password2" type="password" required shadow />
                 </div>
                 <div>
                     <div className="mb-2 block">
@@ -52,7 +99,9 @@ export default function Home() {
                         </Link>
                     </Label>
                 </div>
-                <Button type="submit">Register new account</Button>
+                <Button
+                    onclick={() => registerHandle()}
+                    type="submit">Register new account</Button>
             </form>
         </div>
 

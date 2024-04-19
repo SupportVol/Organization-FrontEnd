@@ -3,7 +3,29 @@
 import { Button, Checkbox, Label, Popover, TextInput } from "flowbite-react";
 import {  DarkThemeToggle } from "flowbite-react";
 
+import {useState} from "react";
+import instance from "@/app/services/Axios/AxiosOrder";
+
 export default function Home() {
+
+    const [loginEmail, setLoginEmail] = useState('')
+    const [loginPassword, setLoginPassword] = useState('')
+    const loginHandleClick = () => {
+        instance.post('/admin/login', {
+            email: loginEmail,
+            password: loginPassword
+        })
+            .then(function (response) {
+                console.log(response.data.token);
+                localStorage.setItem('stToken',response.data.token)
+                window.location.reload();
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+
+    }
+
   return (
 
     <main className="flex flex-col min-h-screen items-center justify-center gap-5 dark:bg-gray-800 ">
@@ -19,7 +41,9 @@ export default function Home() {
                     <div className="mb-2 block">
                         <Label htmlFor="email1" value="Your email" />
                     </div>
-                    <TextInput id="email1" type="email" placeholder="name@flowbite.com" required />
+                    <TextInput
+                        onChange={(e) => setLoginEmail(e.target.value)}
+                        id="email1" type="email" placeholder="name@flowbite.com" required />
                 </div>
                 <div>
                     <div className="mb-2 block">
@@ -96,14 +120,18 @@ export default function Home() {
                             </div>
                         }
                     >
-                        <TextInput id="password1" type="password" required />
+                        <TextInput
+                            onChange={(e) => setLoginPassword(e.target.value)}
+                            id="password1" type="password" required />
                     </Popover>
                 </div>
                 <div className="flex items-center gap-2">
                     <Checkbox id="remember" />
                     <Label htmlFor="remember">Remember me</Label>
                 </div>
-                <Button type="submit">Submit</Button>
+                <Button
+                    onclick={() => loginHandleClick()}
+                    type="submit">Submit</Button>
             </form>
         </div>
         <DarkThemeToggle />

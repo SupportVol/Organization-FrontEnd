@@ -7,6 +7,9 @@ import { useState } from "react";
 export default function NewsArt(props: any) {
 
     const [openModal, setOpenModal] = useState(false);
+    const [Img, setImg] = useState('');
+
+
 
 
     return (
@@ -56,7 +59,7 @@ export default function NewsArt(props: any) {
                                     </p>
                                     <p className="text-xs text-gray-500 dark:text-gray-400">SVG, PNG, JPG or GIF (MAX. 800x400px)</p>
                                 </div>
-                                <FileInput id="dropzone-file" className="hidden" />
+                                <input type="file" onChange={(e) => setImg(e.target.files[0])} id="dropzone-file" className="hidden" />
                             </Label>
                         </div>
                     </Modal.Body>
@@ -64,9 +67,9 @@ export default function NewsArt(props: any) {
 
                         <div className="flex justify-center gap-4">
                             <Button color="failure" onClick={() => setOpenModal(false)}>
-                                Yes, I'm sure
+                                Yes,I'm sure
                             </Button>
-                            <Button color="gray" onClick={() => setOpenModal(false)}>
+                            <Button color="gray" >
                                 No, cancel
                             </Button>
                         </div>

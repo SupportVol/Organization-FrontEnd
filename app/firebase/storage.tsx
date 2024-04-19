@@ -49,7 +49,7 @@
     /**
      * Storage module from Firebase SDK.
      */
-    const storage = getStorage();
+    export const storage = getStorage();
 
     /**
      * Class representing Firebase Storage operations.
